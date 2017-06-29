@@ -1,0 +1,39 @@
+<!--
+    1-  Gerar um função que preenche a tela com bugs em locais aleatórios no
+        tabuleiro. Essa função deve ser repetida em um intervalo de tempo.
+
+        Dica: Use a função Math.random para gerar números aleatórios.
+
+    2-  Ao clicar em um bug, esse deve ser removido da tela.
+
+    3-  Contabilizar pontos por bugs eliminados.
+
+    4-  Adicionar um botão para reiniciar o jogo.
+
+    5-  Adicionar um som ao clicar em um bug.
+
+    Desafio: Criar um game over após a tela estar com mais de 15 bugs.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bugs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="bugs" ng-controller="JogoController">
+        <button ng-click="Iniciar()">Começar/Reiniciar</button>
+        <p ng-if="pontos != null"><b>Pontos: </b>{{pontos}}</p>
+        <p ng-if="bugs.length != null">Bug's: {{bugs.length}}</p>
+    <section>
+        <div ng-repeat="bug in bugs" ng-style="{'left': bug.left, 'top': bug.top}" ng-click="remover($index)">
+                  <p ng-if="bug.fail != null">GAME OVER</p>
+        </div>
+    </section>
+
+    <script src="../comum/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
