@@ -1,0 +1,25 @@
+body{
+    margin: 0 auto;
+    text-align: center;
+}
+
+section{
+    width: 800px;
+    height: 800px;
+    border: 1px solid #555;
+    margin: 30px auto;
+    position: relative;
+}
+
+section div{
+    background-image: url('../imgs/bug.gif');
+    background-size: 100%;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    cursor: url('sword.png'), auto;
+}
+
+section div p{
+    font-size: 100px;;
+}
